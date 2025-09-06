@@ -1,0 +1,22 @@
+def es_palindromo(palabra):
+    # Paso todo a minúsculas y quito los espacios para que no afecten
+    palabra = palabra.lower().replace(" ", "")
+    
+    # Recorro la mitad de la palabra y comparo con la otra mitad
+    for i in range(len(palabra) // 2):
+        if palabra[i] != palabra[-(i+1)]:
+            # Si alguna letra no coincide, no es palíndromo
+            return False
+    
+    # Si terminó el ciclo sin problemas, sí es palíndromo
+    return True
+
+if __name__ == "_main_":
+    # Pido al usuario que escriba una palabra o frase
+    palabra = input("Escribe una palabra o frase: ")
+    
+    # Muestro el resultado
+    if es_palindromo(palabra):
+        print("Es palíndromo")
+    else:
+        print("No es palíndromo")
