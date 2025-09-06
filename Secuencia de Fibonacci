@@ -1,0 +1,18 @@
+def fibonacci(n):
+    # Empiezo la lista con los dos primeros valores de la serie
+    numeros = [0, 1]
+    
+    # Genero los siguientes valores desde la posición 2 en adelante
+    for i in range(2, n):
+        # Cada número nuevo es la suma de los dos anteriores
+        numeros.append(numeros[i-1] + numeros[i-2])
+    
+    # Devuelvo solo los n primeros números
+    return numeros[:n]
+
+if __name__ == "_main_":
+    # Pido al usuario cuántos términos quiere
+    n = int(input("¿Cuántos términos quieres de la secuencia Fibonacci? "))
+    
+    # Muestro la lista resultante
+    print(fibonacci(n))
